@@ -55,7 +55,7 @@ st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home & Data Exploration", "Visualizations", "Model Prediction", "Model Performance"])
 
 st.sidebar.markdown("---")
-st.sidebar.info(f"📁 Data Source: {DATA_DIR}\n\n🤖 Model Source: {MODEL_DIR}")
+
 
 # ==========================================
 # PAGE 1: HOME & DATA EXPLORATION
