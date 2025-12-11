@@ -71,8 +71,7 @@ if page == "Home & Data Exploration":
     col2.metric("Total Features", df.shape[1])
     col3.metric("Missing Values", df.isna().sum().sum())
 
-    st.write("**Data Types:**")
-    st.dataframe(pd.DataFrame(df.dtypes, columns=["Type"]).T)
+    
 
     # 2. Interactive Filtering
     st.subheader("2. Filter Data")
