@@ -87,10 +87,9 @@ streamlit run app.py
 
 ## 📸 Screenshots
 
-
 | Home Page | Prediction Page |
 |:---:|:---:|
-|![alt text](image-1.png)  | ![alt text](image.png) |
+| ![alt text](image.png) |![alt text](image-1.png)  |
 
 -----
 
