@@ -87,7 +87,6 @@ streamlit run app.py
 
 ## 📸 Screenshots
 
-*(Add screenshots of your app here. You can drag and drop images into your GitHub repo or use an image hosting link)*
 
 | Home Page | Prediction Page |
 |:---:|:---:|
