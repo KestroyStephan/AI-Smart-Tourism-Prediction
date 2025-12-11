@@ -40,7 +40,7 @@ Follow these steps to set up the project on your local machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YourUsername/tourism-application.git](https://github.com/YourUsername/tourism-application.git)
+git clone https://github.com/KestroyStephan/AI-Smart-Tourism-Prediction.git
 cd tourism-application
 ```
 
@@ -76,7 +76,7 @@ streamlit run app.py
 
 ```text
 ├── data/                  # CSV/Excel datasets used for the project
-├── models/                # Saved ML models (e.g., .pkl files)
+├── notebooks/models       # Saved ML models (e.g., .pkl files)
 ├── app.py                 # Main Streamlit application file
 ├── requirements.txt       # List of python dependencies
 ├── README.md              # Project documentation
@@ -91,7 +91,7 @@ streamlit run app.py
 
 | Home Page | Prediction Page |
 |:---:|:---:|
-|  |  |
+|![alt text](image-1.png)  | ![alt text](image.png) |
 
 -----
 
@@ -100,10 +100,10 @@ streamlit run app.py
 **Developer:** Stephan Kestroy
 
   * 📧 Email: stephankestroy@gmail.com
-  * 🐙 GitHub: [YourGitHubProfile](https://github.com/KestroyStephan)
+  * 🐙 GitHub: [KestroyStephan](https://github.com/KestroyStephan)
 
 -----
 
 *Created for the Final Year Project 2025.*
 
-```
+
