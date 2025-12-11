@@ -1,0 +1,41 @@
+name,category,eco_score,cultural_score,vendor_count,local_empowerment_index,accessibility_score,crowd_level,danger_level,latitude,longitude,place_name,avg_rating,review_count,avg_sentiment,local_empowerment_signal
+Sigiriya Rock Fortress,cultural,4,10,35,8,7,high,3,7.957,80.7603,sigiriya rock fortress,4.6456140350877195,285.0,0.0,0.6348717948717949
+Ella Rock,eco,10,3,15,7,5,medium,4,6.8663,81.046,ella rock,4.25594474494713,0.0,0.0,0.26
+Adam's Peak,mixed,8,8,20,7,4,high,6,6.8096,80.4994,adam's peak,4.25594474494713,0.0,0.0,0.30000000000000004
+Horton Plains National Park,eco,10,4,10,6,5,medium,5,6.8026,80.8059,horton plains national park,4.3264248704663215,193.0,0.32623304184056,0.331965811965812
+Temple of the Tooth (Kandy),cultural,3,10,40,9,8,high,1,7.2936,80.6413,temple of the tooth (kandy),4.25594474494713,0.0,0.0,0.5000000000000001
+Galle Fort,cultural,5,9,50,8,9,high,2,6.025,80.217,galle fort,4.4628975265017665,283.0,0.3648445626234365,0.7535042735042735
+Sinharaja Rainforest,eco,10,3,8,6,4,medium,7,6.4213,80.4589,sinharaja rainforest,4.25594474494713,0.0,0.0,0.184
+Udawalawe National Park,eco,9,2,12,5,4,medium,6,6.433,80.8729,udawalawe national park,4.677852348993288,149.0,0.0,0.29788034188034185
+Yala National Park,eco,9,3,25,6,5,high,8,6.3668,81.5194,yala national park,4.47029702970297,202.0,0.31761158179929566,0.45811965811965816
+Jaffna Fort,cultural,3,8,20,7,6,medium,2,9.668,80.0074,jaffna fort,3.7951807228915664,249.0,0.0,0.4702564102564103
+Anuradhapura Sacred City,cultural,4,10,30,8,7,medium,2,8.335,80.41,anuradhapura sacred city,4.25594474494713,0.0,0.0,0.4
+Polonnaruwa Ruins,cultural,4,9,25,8,7,medium,2,7.9394,81.0008,polonnaruwa ruins,4.423423423423423,333.0,0.0,0.5876923076923077
+Mirissa Beach,eco,8,4,40,7,8,high,3,5.9484,80.4588,mirissa beach,4.267281105990784,217.0,0.46250536276045306,0.6083760683760685
+Arugam Bay,eco,9,3,35,7,6,high,4,6.8402,81.8347,arugam bay,4.0588235294117645,187.0,0.0,0.5478632478632478
+Nuwara Eliya Tea Plantations,eco,7,6,30,8,7,medium,2,6.9497,80.7891,nuwara eliya tea plantations,4.25594474494713,0.0,0.0,0.4
+Gregory Lake,mixed,6,6,25,7,9,high,1,6.957,80.777,gregory lake,3.96484375,256.0,0.0,0.515042735042735
+Devon Falls,eco,9,3,10,6,6,medium,3,6.9408,80.556,devon falls,4.25594474494713,0.0,0.46396982422825983,0.2
+Ravana Falls,eco,8,3,20,6,7,high,4,6.866,81.048,ravana falls,4.019323671497585,207.0,0.39501254389953017,0.4215384615384616
+Kadurugoda Temple,cultural,2,9,10,6,5,low,1,9.661,80.027,kadurugoda temple,4.25594474494713,0.0,0.0,0.2
+Kelaniya Temple,cultural,3,10,25,7,8,medium,1,6.955,79.922,kelaniya temple,4.25594474494713,0.0,0.0,0.33999999999999997
+Dambulla Cave Temple,cultural,3,10,20,7,6,medium,2,7.8554,80.649,dambulla cave temple,4.43613707165109,321.0,0.0,0.5194871794871796
+Pinnawala Elephant Orphanage,mixed,7,7,30,8,8,high,5,7.2922,80.3839,pinnawala elephant orphanage,3.4200542005420056,369.0,0.0,0.6523076923076923
+Kithulgala Rainforest,eco,10,3,18,7,5,medium,6,6.985,80.425,kithulgala rainforest,4.25594474494713,0.0,0.0,0.284
+Bundala National Park,eco,9,2,12,5,4,low,6,6.199,81.333,bundala national park,4.698412698412699,189.0,0.4327860875995204,0.3252307692307692
+Minneriya National Park,eco,9,3,18,6,5,medium,6,8.04,80.818,minneriya national park,4.411255411255412,231.0,0.0,0.4219487179487179
+Independence Square,cultural,2,8,35,8,9,high,1,6.905,79.8612,independence square,4.25594474494713,0.0,0.3506214024071167,0.44
+Royal Botanical Garden,hPeradeniya eco,8,5,25,8,9,high,1,7.2715,80.5965,royal botanical garden,4.319658119658119,585.0,0.39853051948051943,0.7600000000000001
+Knuckles Mountain Range,eco,10,3,8,6,3,low,7,7.478,80.7841,knuckles mountain range,4.25594474494713,0.0,0.0,0.184
+Ambuluwawa Tower,mixed,7,7,15,7,6,high,2,7.2114,80.3317,ambuluwawa tower,4.25594474494713,0.0,0.0,0.26
+Jungle Beach,eco,9,3,20,6,5,medium,3,5.99,80.25,jungle beach,3.5355191256830603,183.0,0.0,0.40512820512820513
+Hiriketiya Beach,eco,9,3,15,6,6,medium,2,5.9649,80.7314,hiriketiya beach,4.25594474494713,0.0,0.43937487159399025,0.24
+Nilaveli Beach,eco,8,3,10,6,7,medium,2,8.7151,81.1908,nilaveli beach,4.333333333333333,165.0,0.0,0.3128205128205128
+Fort Frederick Trincomalee,cultural,3,8,20,7,8,medium,2,8.57,81.24,fort frederick trincomalee,4.25594474494713,0.0,0.0,0.30000000000000004
+Kumana National Park,eco,10,3,8,5,3,low,7,6.555,81.666,kumana national park,4.542857142857143,35.0,0.0,0.18793162393162394
+Hanthana Mountain Range,eco,10,3,12,6,4,medium,5,7.2631,80.633,hanthana mountain range,4.25594474494713,0.0,0.0,0.216
+Colombo National Museum,cultural,2,10,30,9,9,high,1,6.9116,79.9272,colombo national museum,4.099337748344371,302.0,0.2934983864044869,0.6264957264957266
+Ritigala Forest Monastery,mixed,9,8,5,6,3,low,6,8.169,80.655,ritigala forest monastery,4.446969696969697,132.0,0.0,0.25025641025641027
+Wasgamuwa National Park,eco,10,2,6,5,4,low,7,7.767,80.887,wasgamuwa national park,4.076687116564417,326.0,0.0,0.370905982905983
+Koneswaram Temple,cultural,3,10,20,7,7,medium,2,8.568,81.24,koneswaram temple,4.454545454545454,264.0,0.0,0.4805128205128205
+Hummanaya Blowhole,eco,8,4,15,6,6,high,3,6.034,80.653,hummanaya blowhole,4.25594474494713,0.0,0.32086374418188324,0.24

@@ -1,0 +1,41 @@
+name,category,eco_score,cultural_score,vendor_count,local_empowerment_index,accessibility_score,crowd_level,danger_level,latitude,longitude
+Sigiriya Rock Fortress,cultural,4,10,35,8,7,high,3,7.9570,80.7603
+Ella Rock,eco,10,3,15,7,5,medium,4,6.8663,81.0460
+Adam's Peak,mixed,8,8,20,7,4,high,6,6.8096,80.4994
+Horton Plains National Park,eco,10,4,10,6,5,medium,5,6.8026,80.8059
+Temple of the Tooth (Kandy),cultural,3,10,40,9,8,high,1,7.2936,80.6413
+Galle Fort,cultural,5,9,50,8,9,high,2,6.0250,80.2170
+Sinharaja Rainforest,eco,10,3,8,6,4,medium,7,6.4213,80.4589
+Udawalawe National Park,eco,9,2,12,5,4,medium,6,6.4330,80.8729
+Yala National Park,eco,9,3,25,6,5,high,8,6.3668,81.5194
+Jaffna Fort,cultural,3,8,20,7,6,medium,2,9.6680,80.0074
+Anuradhapura Sacred City,cultural,4,10,30,8,7,medium,2,8.3350,80.4100
+Polonnaruwa Ruins,cultural,4,9,25,8,7,medium,2,7.9394,81.0008
+Mirissa Beach,eco,8,4,40,7,8,high,3,5.9484,80.4588
+Arugam Bay,eco,9,3,35,7,6,high,4,6.8402,81.8347
+Nuwara Eliya Tea Plantations,eco,7,6,30,8,7,medium,2,6.9497,80.7891
+Gregory Lake,mixed,6,6,25,7,9,high,1,6.9570,80.7770
+Devon Falls,eco,9,3,10,6,6,medium,3,6.9408,80.5560
+Ravana Falls,eco,8,3,20,6,7,high,4,6.8660,81.0480
+Kadurugoda Temple,cultural,2,9,10,6,5,low,1,9.6610,80.0270
+Kelaniya Temple,cultural,3,10,25,7,8,medium,1,6.9550,79.9220
+Dambulla Cave Temple,cultural,3,10,20,7,6,medium,2,7.8554,80.6490
+Pinnawala Elephant Orphanage,mixed,7,7,30,8,8,high,5,7.2922,80.3839
+Kithulgala Rainforest,eco,10,3,18,7,5,medium,6,6.9850,80.4250
+Bundala National Park,eco,9,2,12,5,4,low,6,6.1990,81.3330
+Minneriya National Park,eco,9,3,18,6,5,medium,6,8.0400,80.8180
+Independence Square,cultural,2,8,35,8,9,high,1,6.9050,79.8612
+Royal Botanical Garden,hPeradeniya eco,8,5,25,8,9,high,1,7.2715,80.5965
+Knuckles Mountain Range,eco,10,3,8,6,3,low,7,7.4780,80.7841
+Ambuluwawa Tower,mixed,7,7,15,7,6,high,2,7.2114,80.3317
+Jungle Beach,eco,9,3,20,6,5,medium,3,5.9900,80.2500
+Hiriketiya Beach,eco,9,3,15,6,6,medium,2,5.9649,80.7314
+Nilaveli Beach,eco,8,3,10,6,7,medium,2,8.7151,81.1908
+Fort Frederick Trincomalee,cultural,3,8,20,7,8,medium,2,8.5700,81.2400
+Kumana National Park,eco,10,3,8,5,3,low,7,6.5550,81.6660
+Hanthana Mountain Range,eco,10,3,12,6,4,medium,5,7.2631,80.6330
+Colombo National Museum,cultural,2,10,30,9,9,high,1,6.9116,79.9272
+Ritigala Forest Monastery,mixed,9,8,5,6,3,low,6,8.1690,80.6550
+Wasgamuwa National Park,eco,10,2,6,5,4,low,7,7.7670,80.8870
+Koneswaram Temple,cultural,3,10,20,7,7,medium,2,8.5680,81.2400
+Hummanaya Blowhole,eco,8,4,15,6,6,high,3,6.0340,80.6530
