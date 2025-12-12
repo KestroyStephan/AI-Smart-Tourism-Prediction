@@ -4,6 +4,8 @@ import numpy as np
 import joblib
 import plotly.express as px
 import plotly.figure_factory as ff
+import matplotlib.pyplot as plt
+import shap
 from pathlib import Path
 import sys
 
@@ -41,11 +43,18 @@ def load_resources():
     scaler = joblib.load(MODEL_DIR / "scaler.pkl")
     le = joblib.load(MODEL_DIR / "label_encoder.pkl")
     metrics = joblib.load(MODEL_DIR / "model_metrics.pkl")
-    return model, scaler, le, metrics
+    
+    # Load background data for SHAP (Explainable AI)
+    try:
+        background_data = joblib.load(MODEL_DIR / "background_data.pkl")
+    except:
+        background_data = None
+        
+    return model, scaler, le, metrics, background_data
 
 try:
     df = load_data()
-    model, scaler, le, metrics = load_resources()
+    model, scaler, le, metrics, background_data = load_resources()
 except Exception as e:
     st.error(f"Error loading resources. Ensure Step 05 has been run.\nDetails: {e}")
     st.stop()
@@ -70,8 +79,6 @@ if page == "Home & Data Exploration":
     col1.metric("Total Locations", df.shape[0])
     col2.metric("Total Features", df.shape[1])
     col3.metric("Missing Values", df.isna().sum().sum())
-
-    
 
     # 2. Interactive Filtering
     st.subheader("2. Filter Data")
@@ -135,11 +142,11 @@ elif page == "Visualizations":
     st.plotly_chart(fig4, use_container_width=True)
 
 # ==========================================
-# PAGE 3: MODEL PREDICTION
+# PAGE 3: MODEL PREDICTION (WITH EXPLAINABLE AI)
 # ==========================================
 elif page == "Model Prediction":
-    st.title("🤖 Real-time Prediction")
-    st.markdown("Predict the tourism category (**Eco, Cultural, or Mixed**) based on location features.")
+    st.title("🤖 Real-time Prediction & Explanation")
+    st.markdown("Predict the tourism category (**Eco, Cultural, or Mixed**) based on location features and understand **why** the AI made that decision.")
 
     # Two columns for inputs
     c1, c2 = st.columns([1, 2])
@@ -187,11 +194,10 @@ elif page == "Model Prediction":
         st.subheader("Prediction Results")
         
         # Prepare Data
-        # Order: [eco, cult, vendor, emp, access, danger, rating, review_count, sentiment, crowd]
         features = np.array([[eco, cult, vendor, emp, access, danger, rating, rev_cnt, sent, crowd]])
         feat_scaled = scaler.transform(features)
         
-        if st.button("Predict Category", type="primary"):
+        if st.button("Predict Category & Explain", type="primary"):
             # Predict
             probs = model.predict_proba(feat_scaled)[0]
             pred_idx = np.argmax(probs)
@@ -207,6 +213,72 @@ elif page == "Model Prediction":
             fig = px.bar(prob_df, x="Category", y="Probability", color="Category", range_y=[0, 1])
             st.plotly_chart(fig, use_container_width=True)
 
+            # --- EXPLAINABLE AI (SHAP) SECTION ---
+            if background_data is not None:
+                st.subheader("🔍 Explainable AI: Why this prediction?")
+                st.markdown("The waterfall chart below shows how each feature pushed the prediction towards this specific category.")
+                
+                # Feature names for visualization
+                feature_names = ["Eco Score", "Cultural Score", "Vendor Count", "Empowerment", 
+                                 "Accessibility", "Danger", "Rating", "Review Count", "Sentiment", "Crowd"]
+                
+                try:
+                    # 1. Initialize Explainer
+                    try:
+                        explainer = shap.TreeExplainer(model)
+                        shap_values = explainer.shap_values(feat_scaled)
+                    except:
+                        explainer = shap.KernelExplainer(model.predict_proba, background_data)
+                        shap_values = explainer.shap_values(feat_scaled)
+
+                    # 2. Extract values for the target class (FIXED LOGIC)
+                    # We need a 1D array of SHAP values for the single sample
+                    if isinstance(shap_values, list):
+                        # List of [ (1, F), (1, F) ... ] -> Take array for pred_idx -> Take first row
+                        values = shap_values[pred_idx][0]
+                        
+                        # Base value
+                        if isinstance(explainer.expected_value, list):
+                            base_value = explainer.expected_value[pred_idx]
+                        else:
+                            base_value = explainer.expected_value
+                    else:
+                        # Single Array case
+                        if len(shap_values.shape) == 3:
+                             # (1, F, C) -> Take row 0, all features, class pred_idx
+                             values = shap_values[0, :, pred_idx]
+                        elif len(shap_values.shape) == 2:
+                             # (1, F)
+                             values = shap_values[0]
+                        else:
+                             values = shap_values[0]
+                        
+                        # Base value
+                        if hasattr(explainer.expected_value, "__len__") and len(explainer.expected_value) > pred_idx:
+                            base_value = explainer.expected_value[pred_idx]
+                        else:
+                            base_value = explainer.expected_value
+
+                    # 3. Create Plot
+                    fig_shap = plt.figure(figsize=(10, 5))
+                    
+                    explanation = shap.Explanation(
+                        values=values, 
+                        base_values=base_value, 
+                        data=features[0], 
+                        feature_names=feature_names
+                    )
+                    
+                    shap.plots.waterfall(explanation, show=False)
+                    st.pyplot(fig_shap)
+                    
+                    st.info("⬆️ **Red bars** push the prediction higher (towards this category). \n⬇️ **Blue bars** push it lower.")
+                    
+                except Exception as e:
+                    st.warning(f"Could not generate SHAP explanation: {e}")
+            else:
+                st.warning("⚠️ Background data for SHAP not found. Please re-run the training script (Step 05) to generate it.")
+
 # ==========================================
 # PAGE 4: MODEL PERFORMANCE
 # ==========================================
@@ -216,9 +288,13 @@ elif page == "Model Performance":
     # 1. Model Comparison
     st.subheader("1. Algorithm Comparison")
     
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     col1.metric("Random Forest Accuracy", f"{metrics['rf_accuracy']:.2%}")
     col2.metric("Logistic Regression Accuracy", f"{metrics['lr_accuracy']:.2%}")
+    
+    if 'rf_cv_score' in metrics:
+        cv_score = metrics['rf_cv_score'] if metrics['best_model_name'] == 'Random Forest' else metrics['lr_cv_score']
+        col3.metric("Cross-Validation Score", f"{cv_score:.2%}")
 
     if metrics['rf_accuracy'] > metrics['lr_accuracy']:
         st.success(f"**Random Forest** performed better and was selected as the final model.")
@@ -233,7 +309,6 @@ elif page == "Model Performance":
     labels = metrics['classes']
     
     # Create Annotated Heatmap using Plotly Figure Factory
-    # x=Predicted, y=Actual
     fig_cm = ff.create_annotated_heatmap(
         z=cm, 
         x=list(labels), 

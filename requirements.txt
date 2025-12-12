@@ -8,3 +8,4 @@ plotly
 pillow
 requests
 openpyxl
+shap
